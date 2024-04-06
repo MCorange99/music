@@ -1,0 +1,137 @@
+{
+    "pop": [
+        {"name": "Green Day - Basket Case", "url": "https://www.youtube.com/watch?v=wZ8eZRxFA-0"},
+        {"name": "Icona Pop - I Love It", "url": "https://www.youtube.com/watch?v=UxxajLWwzqY"}
+    ],
+    "hip-hop": [
+        {"name": "Afroman - Because I Got High", "url": "https://www.youtube.com/watch?v=WeYsTmIzjkw"}
+    ],
+    "rave": [
+        {"name": "EVERYTHING WHAT", "url": "https://www.youtube.com/watch?v=Gjdsq4kc5cA"},
+        {"name": "Tricky Disco", "url": "https://www.youtube.com/watch?v=t78qVdbAiXw"},
+        {"name": "DR. VODKA - Tricky Disco", "url": "https://www.youtube.com/watch?v=IknAUhl3i2o"}
+    ],
+    "techno": [
+        {"name": "Dance For Me", "url": "https://www.youtube.com/watch?v=5DTSvGO_944"},
+        {"name": "Give It To Me", "url": "https://www.youtube.com/watch?v=upQe8EeSyZU"},
+        {"name": "Empire Of The Sun, southstar - We Are The People", "url": "https://www.youtube.com/watch?v=qguEGR5BK2k"},
+        {"name": "Beggin' (Techno)", "url": "https://www.youtube.com/watch?v=tXPs1FwW6lk"},
+        {"name": "Lily Allen - Not Fair", "url": "https://www.youtube.com/watch?v=WON_YIbeLis"},
+        {"name": "I WAS MADE FOR LOVIN' YOU (TECHNO)", "url": "https://www.youtube.com/watch?v=asVznhccYao"},
+        {"name": "Nicolas Julian - Applause", "url": "https://www.youtube.com/watch?v=-pXlrWVICAE"},
+        {"name": "08 Blumchen - Blaue Augen", "url": "https://www.youtube.com/watch?v=mE4PZcUfiwE"}
+    ],
+    "electronic": [
+        {"name": "Zombie Nation - Kernkraft 400", "url": "https://www.youtube.com/watch?v=z5LW07FTJbI"},
+        {"name": "Benny Benassi - Satisfaction", "url": "https://www.youtube.com/watch?v=a0fkNdPiIL4"}
+        
+    ],
+    "rock": [
+        {"name": "Black Sabbath", "url": "https://www.youtube.com/watch?v=BOTIIw76qiE"}
+    ],
+    "house": [
+        {"name": "Ralph Castelli - Morning Sex (Mochakk Remix)", "url": "https://www.youtube.com/watch?v=6bCwJ_TIDG4"},
+        {"name": "Billie Eilish - Bossa Nova (Lewii Edit)", "url": "https://www.youtube.com/watch?v=gNawHj2NCxA"},
+        {"name": "Fidde - I Only See Things I Dont Have", "url": "https://www.youtube.com/watch?v=vX_Ye_ZzI-Y"},
+        {"name": "Bauhouse - After Marvins Dance (Marvin Gaye's 'After The Dance' Edit)", "url": "https://www.youtube.com/watch?v=J-cgyYiExh8"},
+        {"name": "Men I Trust - Tailwhip (Lewii Edit)", "url": "https://www.youtube.com/watch?v=XhyM-JUWwWQ"},
+        {"name": "Sweely - Le Son Dancefloor", "url": "https://www.youtube.com/watch?v=5uEvZgmoG6Y"},
+        {"name": "THEOS - Rhodes Trip", "url": "https://www.youtube.com/watch?v=m7guRO0Uz_c"},
+        {"name": "Baltra - Tears Drop", "url": "https://www.youtube.com/watch?v=EXXMtKPfuzY"},
+        {"name": "Fidde - If Theres A Heaven I Wanna See It", "url": "https://www.youtube.com/watch?v=l2Nw7cIh7qg"},
+        {"name": "Unknown Artist - Kcik 23", "url": "https://www.youtube.com/watch?v=SnnqDdZJpzA"}
+    ],
+    "lietuviskos": [
+        {"name": "Adomas Vysniauskas - As Judu", "url": "https://www.youtube.com/watch?v=dMm16TzZrjg"},
+        {"name": "RADVIS - KINO FILMAI", "url": "https://www.youtube.com/watch?v=vhAEkC3xNMo"},
+        {"name": "16Hz - Autostrada Vilnius - Kaunas", "url": "https://www.youtube.com/watch?v=ANS2TSegr40"},
+        {"name": "Zas - Zalias Pasas", "url": "https://www.youtube.com/watch?v=SZA7IjlCfyI"},
+        {"name": "Dzordana Butkute - Nebenoriu Laukt", "url": "https://www.youtube.com/watch?v=_AozFrAqNMk"},
+        {"name": "Juodas Garvezys (Remix)", "url": "https://www.youtube.com/watch?v=D-7qQbXHSAw"},
+        {"name": "morre - Kaip Diena", "url": "https://www.youtube.com/watch?v=6LDgLWCQSSM"},
+        {"name": "MC ENDRAY - AUDI", "url": "https://www.youtube.com/watch?v=oIjNoMGEuRg"},
+        {"name": "Mercy Dance - I Pajuri", "url": "https://www.youtube.com/watch?v=RPpkMh47l9w"},
+        {"name": "NL - Pasitusinam", "url": "https://www.youtube.com/watch?v=WhSFudvloog"},
+        {"name": "SixthBoi - Nevaidink", "url": "https://www.youtube.com/watch?v=nOTNnnrqTII"},
+        {"name": "Mr.Bullet - UZ MUS IR JUS", "url": "https://www.youtube.com/watch?v=85q_7jXEgH8"},
+        {"name": "Jovani, Karaliska Erdve - Is Leto Leidziasi Saule", "url": "https://www.youtube.com/watch?v=VqSu8iG1_DE"},
+        {"name": "Rondo - Margarita", "url": "https://www.youtube.com/watch?v=rF4w-Rxsiv4"},
+        {"name": "Radvis - TU ESI MELAGIS (Techno Extended)", "url": "https://www.youtube.com/watch?v=kmvvP7GW_bw"},
+        {"name": "Zas - Myliu kina", "url": "https://www.youtube.com/watch?v=ImFrfmi-qT8"},
+        {"name": "Zilvinas Zvagulis - Amerikonas grizo sunus", "url": "https://www.youtube.com/watch?v=UvzJEz5ADY8"},
+        {"name": "Raketa - I Kluba", "url": "https://www.youtube.com/watch?v=FkSjtpYN3EI"},
+        {"name": "Karaliska Erdve - Vakareja", "url": "https://www.youtube.com/watch?v=g0HmrlJ7fhE"},
+        {"name": "Tnn - Parukom", "url": "https://www.youtube.com/watch?v=v9pBZK2RIPI"},
+        {"name": "DJ Dalgis - Kauniete", "url": "https://www.youtube.com/watch?v=b3xPE9Iyuzc"},
+        {"name": "Andzikas - I gamta", "url": "https://www.youtube.com/watch?v=UyLdjC-hihM"},
+        {"name": "nemuno krantai - rytmecio rasos", "url": "https://www.youtube.com/watch?v=2-fGbsrofv4"},
+        {"name": "Tipo grupe - Lovoj Vezi", "url": "https://www.youtube.com/watch?v=M3zVMzWCy_c"},
+        {"name": "Kastanenda - Sombrero", "url": "https://www.youtube.com/watch?v=3Z3_4TknCfQ"},
+        {"name": "Elektra - Juda Tavo rankos", "url": "https://www.youtube.com/watch?v=k2RuDoudnOE"},
+        {"name": "Vilija ir Marijonas mikutavicius - Dabar Geriausi Musu Vakarai", "url": "https://www.youtube.com/watch?v=MPnZkEscWo0"},
+        {"name": "Parnesk alaus OG", "url": "https://www.youtube.com/watch?v=e7cB1JIlZ2k"},
+        {"name": "Eugenijus Ostapenko - Dviratukas", "url": "https://www.youtube.com/watch?v=ILFHZQK33Mw"},
+        {"name": "Ciulpuoneliai - Jau Nutilo Sirgaliai", "url": "https://www.youtube.com/watch?v=s8qIVA1U0C0"},
+        {"name": "Tweaxx - Mersas", "url": "https://www.youtube.com/watch?v=7ljAzgALPdA"},
+        {"name": "Dove - Naktinis Tusas", "url": "https://www.youtube.com/watch?v=pz-HEAwFEnk"},
+        {"name": "MAMA MANE RODYS PER FARUS", "url": "https://www.youtube.com/watch?v=F5HqXYRDZaE"},
+        {"name": "Kastaneda - Kelyje", "url": "https://www.youtube.com/watch?v=JVE6NQqKPL4"},
+        {"name": "NL - Juodas Golfas", "url": "https://www.youtube.com/watch?v=f2-ZmElSvPc"},
+        {"name": "DJ Dalgis - Zalia Siera", "url": "https://www.youtube.com/watch?v=nfentq_pez4"},
+        {"name": "L1GHT CASH - Whiskey Cola Lietuviskai (sultys degtinele) remix", "url": "https://www.youtube.com/watch?v=YVaqDaf1KXU"},
+        {"name": "Tipo grupe ir Kastaneda - Po stikliuka", "url": "https://www.youtube.com/watch?v=EtmE60nE7fI"},
+        {"name": "MG INTERNATIONAL - JUODA ORCHIDEJA", "url": "https://www.youtube.com/watch?v=HQvceFRBq9M"},
+        {"name": "Ganja - Truputi", "url": "https://www.youtube.com/watch?v=Pxve7CwiCHM"},
+        {"name": "Riaukenzo - Trys Trys Trys", "url": "https://www.youtube.com/watch?v=qJv6GRQCnCk"},
+        {"name": "Grupiokai - Degtine", "url": "https://www.youtube.com/watch?v=8SqbG2VmEFw"},
+        {"name": "Robertas Kupstas - Cia Mano Rojus", "url": "https://www.youtube.com/watch?v=xij_YeEInr8"},
+        {"name": "NIERKA - PENKTADIENIS", "url": "https://www.youtube.com/watch?v=h3TuZj_OAf0"},
+        {"name": "VAIKAI PO LELIJOM (REMIX)", "url": "https://www.youtube.com/watch?v=k1amBbsAZuo"},
+        {"name": "Vitalija Katunskyte - Robinzonas", "url": "https://www.youtube.com/watch?v=erDHG-QpbPY"},
+        {"name": "Rycka klipas", "url": "https://www.youtube.com/watch?v=nuTUDSQ3BBI"},
+        {"name": "Nezinau, Kodel...", "url": "https://www.youtube.com/watch?v=A-i2CkCnPoc"},
+        {"name": "NL - R1", "url": "https://www.youtube.com/watch?v=hSgav4fYnZ8"},
+        {"name": "DJ Dalgis - Negeriau", "url": "https://www.youtube.com/watch?v=c89YvG3MCcs"},
+        {"name": "Tipo Grupe - tipo daina", "url": "https://www.youtube.com/watch?v=PTIOaSjEgIU"},
+        {"name": "Depresinis feat. Deivas - 0,7", "url": "https://www.youtube.com/watch?v=rjwFjBgTzAA"},
+        {"name": "Depresinis & MERAKI2004 - VASARA ZJBS", "url": "https://www.youtube.com/watch?v=BD-pBjRy-5A"},
+        {"name": "Depresinis feat. Deivas - LEDUKAI", "url": "https://www.youtube.com/watch?v=R2-MtpkKgGI"},
+        {"name": "Depresinis feat. Deivas - Pavasaris", "url": "https://www.youtube.com/watch?v=yWWAucfQdN4"},
+        {"name": "Depresinis - LEDINE", "url": "https://www.youtube.com/watch?v=qugvChkXMLk"},
+        {"name": "Depresinis, Jypas - O Mazuti", "url": "https://www.youtube.com/watch?v=4t_DPbe2r3M"},
+        {"name": "AVA - Eik Tu NA", "url": "https://www.youtube.com/watch?v=yRf3ijaIgOg"},
+        {"name": "Judam Lietuvoj", "url": "https://www.youtube.com/watch?v=WDzWSEgSy5U"},
+        {"name": "16Hz - Baliavojam", "url": "https://www.youtube.com/watch?v=Ia-qERX8WLs"},
+        {"name": "Deivas - Klaipeda On Top", "url": "https://www.youtube.com/watch?v=g_h2M3e2OYU"},
+        {"name": "Depresinis - Volkswagina", "url": "https://www.youtube.com/watch?v=1lZR1VKsQHo"},
+        {"name": "SADBOY - Kaifuok", "url": "https://www.youtube.com/watch?v=vclryWgfy8I"},
+        {"name": "SADBOY - Blizgantys Naikai", "url": "https://www.youtube.com/watch?v=p5KsYJGcfOM"},
+        {"name": "SADBOY - 1001 Naktis", "url": "https://www.youtube.com/watch?v=mLJIjGvWmKI"},
+        {"name": "SADBOY - Deginam", "url": "https://www.youtube.com/watch?v=w3R0Aq1EGXg"},
+        {"name": "Wenona Waves - Topine Panele", "url": "https://www.youtube.com/watch?v=MPHuhmUomfE"},
+        {"name": "Andzikas - Virs debesu", "url": "https://www.youtube.com/watch?v=PHJcVGhxra8"},
+        {"name": "Grupe MX - 1.9 TDI", "url": "https://www.youtube.com/watch?v=8FBr5GQXsI8"},
+        {"name": "Patruliai - Kur Tu", "url": "https://www.youtube.com/watch?v=OPWhiu3cvj0"},
+        {"name": "Ka Tu Ka Vakare", "url": "https://www.youtube.com/watch?v=6SOS4ljHbJY"}
+    ],
+    "rusiskos": [
+        {"name": "Topolini puh", "url": "https://www.youtube.com/watch?v=UUryvYF8tUs"},
+        {"name": "Raim & Artur feat. Zhenis - Diskoteka is 90 hit", "url": "https://www.youtube.com/watch?v=GfBhxlNhrn0"},
+        {"name": "Pimp Schwab - vse shto nas ne Ubivaet", "url": "https://www.youtube.com/watch?v=NTEXFyUE9Ww"},
+        {"name": "Dzaro and hansa - Visky Kola karaleva trans pola", "url": "https://www.youtube.com/watch?v=fflrMvZ2HtA"}
+    ],
+    "noclue": [
+        {"name": "Bad Boys", "url": "https://www.youtube.com/watch?v=NTC7RD8xzCY"},
+        {"name": "DR. VODKA - DZIEWCZYNO Z TIKTOKA", "url": "https://www.youtube.com/watch?v=HLbw1WQt64o"},
+        {"name": "Maco Mamuko - Whiskey, Cola i Tequila", "url": "https://www.youtube.com/watch?v=aBrN0k0Phtc"}
+
+    ],
+    "reggea": [
+        {"name": "Shaggy - It Wasn't Me", "url": "https://www.youtube.com/watch?v=ssVj50ombaM"}
+    ],
+    "alt": [
+        {"name": "ROMANCEPLANET - FALL FROM THE SKY", "url": "https://www.youtube.com/watch?v=HMhzxzXBisw"},
+        {"name": "ROMANCEPLANET - PLAIN WHITE TEE", "url": "https://www.youtube.com/watch?v=tdVQbNwjGac"},
+        {"name": "ROMANCEPLANET - DANCE", "url": "https://www.youtube.com/watch?v=ircOfMb4gEw"}
+    ]
+}
