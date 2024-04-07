@@ -1,5 +1,3 @@
-/*
-!/.gitignore
-!/dl.py
-!/manifest.json
-!/requirements.txt
+/out
+/music_mgr/target
+/.venv
