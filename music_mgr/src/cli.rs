@@ -1,5 +1,3 @@
-use std::default;
-
 use camino::Utf8PathBuf;
 use clap::{Parser, Subcommand};
 
@@ -24,5 +22,10 @@ pub struct CliArgs {
 #[derive(Debug, Subcommand, Default)]
 pub enum CliCommand {
     #[default]
-    Download
+    Download,
+    Add {
+        url: String,
+        name: String,
+        genre: String
+    }
 }
