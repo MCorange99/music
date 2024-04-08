@@ -48,7 +48,7 @@ impl Downloader {
     
     async fn download_song(&mut self, path: String, audio_format: &String, url: &String) -> anyhow::Result<()> {
         if PathBuf::from(&path).exists() {
-            log::info!("File {path} exists, skipping");
+            log::debug!("File {path} exists, skipping");
             return Ok(())
         }
         let mut cmd = tokio::process::Command::new(&self.ytdlp_path);
