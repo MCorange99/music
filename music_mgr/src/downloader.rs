@@ -33,7 +33,7 @@ impl Downloader {
         }
     }
 
-    pub async fn download_all(&mut self, manifest: Manifest, cli: &CliArgs) -> anyhow::Result<usize> {
+    pub async fn download_all(&mut self, manifest: &Manifest, cli: &CliArgs) -> anyhow::Result<usize> {
         let format = manifest.format()?;
 
         for (genre, songs) in &manifest.genres {

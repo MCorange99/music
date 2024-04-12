@@ -1,6 +1,8 @@
 use camino::Utf8PathBuf;
 use clap::{Parser, Subcommand};
 
+use crate::util::isatty;
+
 #[derive(Debug, Parser)]
 pub struct CliArgs {
     /// Show more info
@@ -17,6 +19,9 @@ pub struct CliArgs {
 
     #[command(subcommand)]
     pub command: Option<CliCommand>,
+
+    #[clap(skip)]
+    pub is_tty: bool
 }
 
 #[derive(Debug, Subcommand, Default)]
@@ -27,5 +32,12 @@ pub enum CliCommand {
         url: String,
         name: String,
         genre: String
+    }
+}
+
+impl CliArgs {
+    pub fn populate_extra(&mut self) -> &mut Self{
+        self.is_tty = isatty();
+        self
     }
 }

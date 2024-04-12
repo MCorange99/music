@@ -20,3 +20,29 @@ pub fn get_ytdlp_path() -> String {
     // TODO: Download yt-dlp to ./.bin/yt-dlp if doesnt exist
     todo!()
 }
+
+#[cfg(target_family="unix")]
+pub fn isatty() -> bool {
+    use std::{ffi::c_int, os::fd::AsRawFd};
+    unsafe {
+        let fd = std::io::stdin().as_raw_fd();
+        libc::isatty(fd as c_int) == 1
+    }
+}
+
+#[cfg(target_family="windows")]
+pub fn isatty() -> bool {
+    unsafe {
+        use windows::Win32::System::Console;
+        use Console::{CONSOLE_MODE, STD_OUTPUT_HANDLE};
+        let Ok(handle) = Console::GetStdHandle(STD_OUTPUT_HANDLE) else {
+            return false;
+        }; 
+        
+        let mut out = CONSOLE_MODE(0);
+
+        let ret = Console::GetConsoleMode(handle, &mut out);
+
+        ret.is_ok()
+    }
+}
