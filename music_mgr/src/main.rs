@@ -1,6 +1,8 @@
 use clap::Parser;
 
-use crate::{cli::{CliArgs, CliCommand}, downloader::Downloader};
+// TODO: Possibly use https://docs.rs/ytextract/latest/ytextract/ instead of ytdlp
+
+use crate::cli::CliArgs;
 
 mod cli;
 mod manifest;
@@ -25,5 +27,5 @@ async fn main() {
     };
 
     
-    commands::command_run(&cli_args, &manifest);
+    commands::command_run(&cli_args, &manifest).await;
 }
