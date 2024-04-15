@@ -1,162 +1,50 @@
 {
   "format": "m4a",
   "genres": {
-    "noclue": [
+    "lietuviskos/sel": [
       {
-        "name": "Bad Boys",
-        "url": "https://www.youtube.com/watch?v=NTC7RD8xzCY"
+        "name": "SEL - Lyja",
+        "url": "https://www.youtube.com/watch?v=KL6JBWnXCxw"
       },
       {
-        "name": "DR. VODKA - DZIEWCZYNO Z TIKTOKA",
-        "url": "https://www.youtube.com/watch?v=HLbw1WQt64o"
+        "name": "SEL - Gyvenimo man vieno neuztenka",
+        "url": "https://youtu.be/7Gd9XaEG5o4"
       },
       {
-        "name": "Maco Mamuko - Whiskey, Cola i Tequila",
-        "url": "https://www.youtube.com/watch?v=aBrN0k0Phtc"
+        "name": "SEL - Ten kazkur giliai",
+        "url": "https://youtu.be/N7YNlegeiqs?si=9BBH6hjrgOjJ01Nz"
       },
       {
-        "name": "Discobitch - C'est Beau La Bourgeoisie",
-        "url": "https://www.youtube.com/watch?v=RCeQN2aEWxo"
-      }
-    ],
-    "rusiskos": [
-      {
-        "name": "Topolini puh",
-        "url": "https://www.youtube.com/watch?v=UUryvYF8tUs"
+        "name": "SEL - Uzmerkiu akis",
+        "url": "https://youtu.be/SdWj06XRZms?si=9TNGzjK9ITom-jaD"
       },
       {
-        "name": "Raim & Artur feat. Zhenis - Diskoteka is 90 hit",
-        "url": "https://www.youtube.com/watch?v=GfBhxlNhrn0"
+        "name": "SEL - As ziuriu i tave pasauli",
+        "url": "https://youtu.be/_SPDjl80kKw"
       },
       {
-        "name": "Pimp Schwab - vse shto nas ne Ubivaet",
-        "url": "https://www.youtube.com/watch?v=NTEXFyUE9Ww"
+        "name": "SEL - Tarp amzinybes",
+        "url": "https://youtu.be/UfPj-0QpGFA"
       },
       {
-        "name": "Dzaro and hansa - Visky Kola karaleva trans pola",
-        "url": "https://www.youtube.com/watch?v=fflrMvZ2HtA"
+        "name": "SEL - Tik Tok",
+        "url": "https://youtu.be/RkaIUateIxg"
       },
       {
-        "name": "Kanikuli",
-        "url": "https://www.youtube.com/watch?v=GNMiDZTL7jo"
+        "name": "SEL - Ten kur sapnai",
+        "url": "https://youtu.be/GDj3NgjDbRo"
       },
       {
-        "name": "Katja lel - moi marmeladni (paprobui mua mua)",
-        "url": "https://www.youtube.com/watch?v=0JMdXFHo5SY"
+        "name": "SEL - Nes as tik vejas",
+        "url": "https://youtu.be/acMG37IZ6z8"
       },
       {
-        "name": "Arash - Temptation",
-        "url": "https://www.youtube.com/watch?v=6X3ZJh762-I"
+        "name": "SEL - Skrendu",
+        "url": "https://youtu.be/G5Q_asvrXlA"
       },
       {
-        "name": "Eldzej and Feduk - Rozovoe vino",
-        "url": "https://www.youtube.com/watch?v=S9oXj3a4gZ4"
-      },
-      {
-        "name": "Ruki Verch - 18 mne uze",
-        "url": "https://www.youtube.com/watch?v=Hxab_Sr132o"
-      }
-    ],
-    "electronic": [
-      {
-        "name": "Zombie Nation - Kernkraft 400",
-        "url": "https://www.youtube.com/watch?v=z5LW07FTJbI"
-      },
-      {
-        "name": "Benny Benassi - Satisfaction",
-        "url": "https://www.youtube.com/watch?v=a0fkNdPiIL4"
-      }
-    ],
-    "reggea": [
-      {
-        "name": "Shaggy - It Wasn't Me",
-        "url": "https://www.youtube.com/watch?v=ssVj50ombaM"
-      }
-    ],
-    "hip-hop": [
-      {
-        "name": "Afroman - Because I Got High",
-        "url": "https://www.youtube.com/watch?v=WeYsTmIzjkw"
-      },
-      {
-        "name": "Drenchill - Freed from Desire",
-        "url": "https://www.youtube.com/watch?v=6b6FBneAENQ"
-      }
-    ],
-    "rave": [
-      {
-        "name": "EVERYTHING WHAT",
-        "url": "https://www.youtube.com/watch?v=Gjdsq4kc5cA"
-      },
-      {
-        "name": "Tricky Disco",
-        "url": "https://www.youtube.com/watch?v=t78qVdbAiXw"
-      },
-      {
-        "name": "DR. VODKA - Tricky Disco",
-        "url": "https://www.youtube.com/watch?v=IknAUhl3i2o"
-      }
-    ],
-    "house": [
-      {
-        "name": "Ralph Castelli - Morning Sex (Mochakk Remix)",
-        "url": "https://www.youtube.com/watch?v=6bCwJ_TIDG4"
-      },
-      {
-        "name": "Billie Eilish - Bossa Nova (Lewii Edit)",
-        "url": "https://www.youtube.com/watch?v=gNawHj2NCxA"
-      },
-      {
-        "name": "Fidde - I Only See Things I Dont Have",
-        "url": "https://www.youtube.com/watch?v=vX_Ye_ZzI-Y"
-      },
-      {
-        "name": "Bauhouse - After Marvins Dance (Marvin Gaye's 'After The Dance' Edit)",
-        "url": "https://www.youtube.com/watch?v=J-cgyYiExh8"
-      },
-      {
-        "name": "Men I Trust - Tailwhip (Lewii Edit)",
-        "url": "https://www.youtube.com/watch?v=XhyM-JUWwWQ"
-      },
-      {
-        "name": "Sweely - Le Son Dancefloor",
-        "url": "https://www.youtube.com/watch?v=5uEvZgmoG6Y"
-      },
-      {
-        "name": "THEOS - Rhodes Trip",
-        "url": "https://www.youtube.com/watch?v=m7guRO0Uz_c"
-      },
-      {
-        "name": "Baltra - Tears Drop",
-        "url": "https://www.youtube.com/watch?v=EXXMtKPfuzY"
-      },
-      {
-        "name": "Fidde - If Theres A Heaven I Wanna See It",
-        "url": "https://www.youtube.com/watch?v=l2Nw7cIh7qg"
-      },
-      {
-        "name": "Unknown Artist - Kcik 23",
-        "url": "https://www.youtube.com/watch?v=SnnqDdZJpzA"
-      }
-    ],
-    "alt": [
-      {
-        "name": "ROMANCEPLANET - FALL FROM THE SKY",
-        "url": "https://www.youtube.com/watch?v=HMhzxzXBisw"
-      },
-      {
-        "name": "ROMANCEPLANET - PLAIN WHITE TEE",
-        "url": "https://www.youtube.com/watch?v=tdVQbNwjGac"
-      },
-      {
-        "name": "ROMANCEPLANET - DANCE",
-        "url": "https://www.youtube.com/watch?v=ircOfMb4gEw"
-      }
-    ],
-    "rock": [
-      {
-        "name": "Black Sabbath",
-        "url": "https://www.youtube.com/watch?v=BOTIIw76qiE"
+        "name": "SEL - Leisk",
+        "url": "https://youtu.be/DDPmFMrffXQ"
       }
     ],
     "lietuviskos": [
@@ -475,16 +363,44 @@
       {
         "name": "PROFLAME - biznis",
         "url": "https://www.youtube.com/watch?v=t139Vd83pgs"
-      }
-    ],
-    "lietuviskos/rave": [
-      {
-        "name": "VainHouse - Malunas Prie Kelio",
-        "url": "https://www.youtube.com/watch?v=bbwuNjDXCiM"
       },
       {
-        "name": "Sokoledas - Mano Skonis Sokolado (Matuze & Arnisxd Remix)",
-        "url": "https://www.youtube.com/watch?v=hb41bfQxiM0"
+        "name": "Vaidas Baumila - Apzavai",
+        "url": "https://www.youtube.com/watch?v=H8uGi4ZMgHA"
+      }
+    ],
+    "hip-hop": [
+      {
+        "name": "Afroman - Because I Got High",
+        "url": "https://www.youtube.com/watch?v=WeYsTmIzjkw"
+      },
+      {
+        "name": "Drenchill - Freed from Desire",
+        "url": "https://www.youtube.com/watch?v=6b6FBneAENQ"
+      }
+    ],
+    "rock": [
+      {
+        "name": "Black Sabbath",
+        "url": "https://www.youtube.com/watch?v=BOTIIw76qiE"
+      }
+    ],
+    "alt": [
+      {
+        "name": "ROMANCEPLANET - FALL FROM THE SKY",
+        "url": "https://www.youtube.com/watch?v=HMhzxzXBisw"
+      },
+      {
+        "name": "ROMANCEPLANET - PLAIN WHITE TEE",
+        "url": "https://www.youtube.com/watch?v=tdVQbNwjGac"
+      },
+      {
+        "name": "ROMANCEPLANET - DANCE",
+        "url": "https://www.youtube.com/watch?v=ircOfMb4gEw"
+      },
+      {
+        "name": "Artemas - i like the way you kiss me",
+        "url": "https://www.youtube.com/watch?v=ODDRRXMi22E"
       }
     ],
     "techno": [
@@ -539,52 +455,138 @@
       {
         "name": "Manian - Welcome To The Club",
         "url": "https://www.youtube.com/watch?v=7F9xDewtgNA"
+      },
+      {
+        "name": "Knock2 - dashstar",
+        "url": "https://www.youtube.com/watch?v=58ml5b_On6w"
       }
     ],
-    "lietuviskos/sel": [
+    "noclue": [
       {
-        "name": "SEL - Lyja",
-        "url": "https://www.youtube.com/watch?v=KL6JBWnXCxw"
+        "name": "Bad Boys",
+        "url": "https://www.youtube.com/watch?v=NTC7RD8xzCY"
       },
       {
-        "name": "SEL - Gyvenimo man vieno neuztenka",
-        "url": "https://youtu.be/7Gd9XaEG5o4"
+        "name": "DR. VODKA - DZIEWCZYNO Z TIKTOKA",
+        "url": "https://www.youtube.com/watch?v=HLbw1WQt64o"
       },
       {
-        "name": "SEL - Ten kazkur giliai",
-        "url": "https://youtu.be/N7YNlegeiqs?si=9BBH6hjrgOjJ01Nz"
+        "name": "Maco Mamuko - Whiskey, Cola i Tequila",
+        "url": "https://www.youtube.com/watch?v=aBrN0k0Phtc"
       },
       {
-        "name": "SEL - Uzmerkiu akis",
-        "url": "https://youtu.be/SdWj06XRZms?si=9TNGzjK9ITom-jaD"
+        "name": "Discobitch - C'est Beau La Bourgeoisie",
+        "url": "https://www.youtube.com/watch?v=RCeQN2aEWxo"
+      }
+    ],
+    "rave": [
+      {
+        "name": "EVERYTHING WHAT",
+        "url": "https://www.youtube.com/watch?v=Gjdsq4kc5cA"
       },
       {
-        "name": "SEL - As ziuriu i tave pasauli",
-        "url": "https://youtu.be/_SPDjl80kKw"
+        "name": "Tricky Disco",
+        "url": "https://www.youtube.com/watch?v=t78qVdbAiXw"
       },
       {
-        "name": "SEL - Tarp amzinybes",
-        "url": "https://youtu.be/UfPj-0QpGFA"
+        "name": "DR. VODKA - Tricky Disco",
+        "url": "https://www.youtube.com/watch?v=IknAUhl3i2o"
+      }
+    ],
+    "rusiskos": [
+      {
+        "name": "Topolini puh",
+        "url": "https://www.youtube.com/watch?v=UUryvYF8tUs"
       },
       {
-        "name": "SEL - Tik Tok",
-        "url": "https://youtu.be/RkaIUateIxg"
+        "name": "Raim & Artur feat. Zhenis - Diskoteka is 90 hit",
+        "url": "https://www.youtube.com/watch?v=GfBhxlNhrn0"
       },
       {
-        "name": "SEL - Ten kur sapnai",
-        "url": "https://youtu.be/GDj3NgjDbRo"
+        "name": "Pimp Schwab - vse shto nas ne Ubivaet",
+        "url": "https://www.youtube.com/watch?v=NTEXFyUE9Ww"
       },
       {
-        "name": "SEL - Nes as tik vejas",
-        "url": "https://youtu.be/acMG37IZ6z8"
+        "name": "Dzaro and hansa - Visky Kola karaleva trans pola",
+        "url": "https://www.youtube.com/watch?v=fflrMvZ2HtA"
       },
       {
-        "name": "SEL - Skrendu",
-        "url": "https://youtu.be/G5Q_asvrXlA"
+        "name": "Kanikuli",
+        "url": "https://www.youtube.com/watch?v=GNMiDZTL7jo"
       },
       {
-        "name": "SEL - Leisk",
-        "url": "https://youtu.be/DDPmFMrffXQ"
+        "name": "Katja lel - moi marmeladni (paprobui mua mua)",
+        "url": "https://www.youtube.com/watch?v=0JMdXFHo5SY"
+      },
+      {
+        "name": "Arash - Temptation",
+        "url": "https://www.youtube.com/watch?v=6X3ZJh762-I"
+      },
+      {
+        "name": "Eldzej and Feduk - Rozovoe vino",
+        "url": "https://www.youtube.com/watch?v=S9oXj3a4gZ4"
+      },
+      {
+        "name": "Ruki Verch - 18 mne uze",
+        "url": "https://www.youtube.com/watch?v=Hxab_Sr132o"
+      }
+    ],
+    "house": [
+      {
+        "name": "Ralph Castelli - Morning Sex (Mochakk Remix)",
+        "url": "https://www.youtube.com/watch?v=6bCwJ_TIDG4"
+      },
+      {
+        "name": "Billie Eilish - Bossa Nova (Lewii Edit)",
+        "url": "https://www.youtube.com/watch?v=gNawHj2NCxA"
+      },
+      {
+        "name": "Fidde - I Only See Things I Dont Have",
+        "url": "https://www.youtube.com/watch?v=vX_Ye_ZzI-Y"
+      },
+      {
+        "name": "Bauhouse - After Marvins Dance (Marvin Gaye's 'After The Dance' Edit)",
+        "url": "https://www.youtube.com/watch?v=J-cgyYiExh8"
+      },
+      {
+        "name": "Men I Trust - Tailwhip (Lewii Edit)",
+        "url": "https://www.youtube.com/watch?v=XhyM-JUWwWQ"
+      },
+      {
+        "name": "Sweely - Le Son Dancefloor",
+        "url": "https://www.youtube.com/watch?v=5uEvZgmoG6Y"
+      },
+      {
+        "name": "THEOS - Rhodes Trip",
+        "url": "https://www.youtube.com/watch?v=m7guRO0Uz_c"
+      },
+      {
+        "name": "Baltra - Tears Drop",
+        "url": "https://www.youtube.com/watch?v=EXXMtKPfuzY"
+      },
+      {
+        "name": "Fidde - If Theres A Heaven I Wanna See It",
+        "url": "https://www.youtube.com/watch?v=l2Nw7cIh7qg"
+      },
+      {
+        "name": "Unknown Artist - Kcik 23",
+        "url": "https://www.youtube.com/watch?v=SnnqDdZJpzA"
+      }
+    ],
+    "reggea": [
+      {
+        "name": "Shaggy - It Wasn't Me",
+        "url": "https://www.youtube.com/watch?v=ssVj50ombaM"
+      }
+    ],
+    "lietuviskos/rave": [
+      {
+        "name": "VainHouse - Malunas Prie Kelio",
+        "url": "https://www.youtube.com/watch?v=bbwuNjDXCiM"
+      },
+      {
+        "name": "Sokoledas - Mano Skonis Sokolado (Matuze & Arnisxd Remix)",
+        "url": "https://www.youtube.com/watch?v=hb41bfQxiM0"
       }
     ],
     "pop": [
@@ -603,6 +605,28 @@
       {
         "name": "Cheri cheri lady",
         "url": "https://www.youtube.com/watch?v=lrIKt5uDWZo"
+      },
+      {
+        "name": "Pitbul - Fireball",
+        "url": "https://www.youtube.com/watch?v=HMqgVXSvwGo"
+      },
+      {
+        "name": "Mr President - Coco Jumbo",
+        "url": "https://www.youtube.com/watch?v=cOrc37wNUqU"
+      },
+      {
+        "name": "LT United - We are the winners",
+        "url": "https://www.youtube.com/watch?v=DBAdOlQPbwg"
+      }
+    ],
+    "electronic": [
+      {
+        "name": "Zombie Nation - Kernkraft 400",
+        "url": "https://www.youtube.com/watch?v=z5LW07FTJbI"
+      },
+      {
+        "name": "Benny Benassi - Satisfaction",
+        "url": "https://www.youtube.com/watch?v=a0fkNdPiIL4"
       }
     ]
   }
