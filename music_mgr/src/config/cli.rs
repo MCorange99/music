@@ -31,8 +31,11 @@ pub enum CliCommand {
     #[default]
     Download,
     Add {
+        #[arg(long, short)]
         url: Option<String>,
+        #[arg(long, short)]
         name: Option<String>,
+        #[arg(long, short)]
         genre: Option<String>
     }
 }

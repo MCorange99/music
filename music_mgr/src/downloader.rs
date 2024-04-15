@@ -87,7 +87,7 @@ impl Downloader {
         Ok(())
     }
 
-    async fn wait_for_procs(&mut self, until: usize) -> anyhow::Result<()> {
+    pub async fn wait_for_procs(&mut self, until: usize) -> anyhow::Result<()> {
         // NOTE: This looks really fucked because i dont want to deadlock the processes so i lock PROCESSES for as little as possible
         // NOTE: So its also kinda really slow
         loop {

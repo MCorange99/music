@@ -50,6 +50,11 @@ impl Manifest {
     }
 
     pub fn add_song(&mut self, genre: String, name: String, url: String) -> anyhow::Result<()> {
+
+        if !self.genres.contains_key(&genre) {
+            self.genres.insert(genre.clone(), Vec::new());
+        }
+
         let Some(genre_ref) = self.genres.get_mut(&genre) else {
             log::error!("Invalid genre '{}'", genre);
             bail!("Invalid genre")

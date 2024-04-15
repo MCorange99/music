@@ -1,28 +1,22 @@
 {
   "format": "m4a",
   "genres": {
-    "rave": [
+    "noclue": [
       {
-        "name": "EVERYTHING WHAT",
-        "url": "https://www.youtube.com/watch?v=Gjdsq4kc5cA"
+        "name": "Bad Boys",
+        "url": "https://www.youtube.com/watch?v=NTC7RD8xzCY"
       },
       {
-        "name": "Tricky Disco",
-        "url": "https://www.youtube.com/watch?v=t78qVdbAiXw"
+        "name": "DR. VODKA - DZIEWCZYNO Z TIKTOKA",
+        "url": "https://www.youtube.com/watch?v=HLbw1WQt64o"
       },
       {
-        "name": "DR. VODKA - Tricky Disco",
-        "url": "https://www.youtube.com/watch?v=IknAUhl3i2o"
-      }
-    ],
-    "hip-hop": [
-      {
-        "name": "Afroman - Because I Got High",
-        "url": "https://www.youtube.com/watch?v=WeYsTmIzjkw"
+        "name": "Maco Mamuko - Whiskey, Cola i Tequila",
+        "url": "https://www.youtube.com/watch?v=aBrN0k0Phtc"
       },
       {
-        "name": "Drenchill - Freed from Desire",
-        "url": "https://www.youtube.com/watch?v=6b6FBneAENQ"
+        "name": "Discobitch - C'est Beau La Bourgeoisie",
+        "url": "https://www.youtube.com/watch?v=RCeQN2aEWxo"
       }
     ],
     "rusiskos": [
@@ -41,20 +35,66 @@
       {
         "name": "Dzaro and hansa - Visky Kola karaleva trans pola",
         "url": "https://www.youtube.com/watch?v=fflrMvZ2HtA"
+      },
+      {
+        "name": "Kanikuli",
+        "url": "https://www.youtube.com/watch?v=GNMiDZTL7jo"
+      },
+      {
+        "name": "Katja lel - moi marmeladni (paprobui mua mua)",
+        "url": "https://www.youtube.com/watch?v=0JMdXFHo5SY"
+      },
+      {
+        "name": "Arash - Temptation",
+        "url": "https://www.youtube.com/watch?v=6X3ZJh762-I"
+      },
+      {
+        "name": "Eldzej and Feduk - Rozovoe vino",
+        "url": "https://www.youtube.com/watch?v=S9oXj3a4gZ4"
+      },
+      {
+        "name": "Ruki Verch - 18 mne uze",
+        "url": "https://www.youtube.com/watch?v=Hxab_Sr132o"
       }
     ],
-    "pop": [
+    "electronic": [
       {
-        "name": "Green Day - Basket Case",
-        "url": "https://www.youtube.com/watch?v=wZ8eZRxFA-0"
+        "name": "Zombie Nation - Kernkraft 400",
+        "url": "https://www.youtube.com/watch?v=z5LW07FTJbI"
       },
       {
-        "name": "Icona Pop - I Love It",
-        "url": "https://www.youtube.com/watch?v=UxxajLWwzqY"
+        "name": "Benny Benassi - Satisfaction",
+        "url": "https://www.youtube.com/watch?v=a0fkNdPiIL4"
+      }
+    ],
+    "reggea": [
+      {
+        "name": "Shaggy - It Wasn't Me",
+        "url": "https://www.youtube.com/watch?v=ssVj50ombaM"
+      }
+    ],
+    "hip-hop": [
+      {
+        "name": "Afroman - Because I Got High",
+        "url": "https://www.youtube.com/watch?v=WeYsTmIzjkw"
       },
       {
-        "name": "Modern Talking - You're My Heart, You're My Soul",
-        "url": "https://www.youtube.com/watch?v=4kHl4FoK1Ys"
+        "name": "Drenchill - Freed from Desire",
+        "url": "https://www.youtube.com/watch?v=6b6FBneAENQ"
+      }
+    ],
+    "rave": [
+      {
+        "name": "EVERYTHING WHAT",
+        "url": "https://www.youtube.com/watch?v=Gjdsq4kc5cA"
+      },
+      {
+        "name": "Tricky Disco",
+        "url": "https://www.youtube.com/watch?v=t78qVdbAiXw"
+      },
+      {
+        "name": "DR. VODKA - Tricky Disco",
+        "url": "https://www.youtube.com/watch?v=IknAUhl3i2o"
       }
     ],
     "house": [
@@ -99,96 +139,24 @@
         "url": "https://www.youtube.com/watch?v=SnnqDdZJpzA"
       }
     ],
-    "electronic": [
+    "alt": [
       {
-        "name": "Zombie Nation - Kernkraft 400",
-        "url": "https://www.youtube.com/watch?v=z5LW07FTJbI"
+        "name": "ROMANCEPLANET - FALL FROM THE SKY",
+        "url": "https://www.youtube.com/watch?v=HMhzxzXBisw"
       },
       {
-        "name": "Benny Benassi - Satisfaction",
-        "url": "https://www.youtube.com/watch?v=a0fkNdPiIL4"
-      }
-    ],
-    "lietuviskos/rave": [
-      {
-        "name": "VainHouse - Malunas Prie Kelio",
-        "url": "https://www.youtube.com/watch?v=bbwuNjDXCiM"
+        "name": "ROMANCEPLANET - PLAIN WHITE TEE",
+        "url": "https://www.youtube.com/watch?v=tdVQbNwjGac"
       },
       {
-        "name": "Sokoledas - Mano Skonis Sokolado (Matuze & Arnisxd Remix)",
-        "url": "https://www.youtube.com/watch?v=hb41bfQxiM0"
-      }
-    ],
-    "reggea": [
-      {
-        "name": "Shaggy - It Wasn't Me",
-        "url": "https://www.youtube.com/watch?v=ssVj50ombaM"
+        "name": "ROMANCEPLANET - DANCE",
+        "url": "https://www.youtube.com/watch?v=ircOfMb4gEw"
       }
     ],
     "rock": [
       {
         "name": "Black Sabbath",
         "url": "https://www.youtube.com/watch?v=BOTIIw76qiE"
-      }
-    ],
-    "noclue": [
-      {
-        "name": "Bad Boys",
-        "url": "https://www.youtube.com/watch?v=NTC7RD8xzCY"
-      },
-      {
-        "name": "DR. VODKA - DZIEWCZYNO Z TIKTOKA",
-        "url": "https://www.youtube.com/watch?v=HLbw1WQt64o"
-      },
-      {
-        "name": "Maco Mamuko - Whiskey, Cola i Tequila",
-        "url": "https://www.youtube.com/watch?v=aBrN0k0Phtc"
-      },
-      {
-        "name": "Discobitch - C'est Beau La Bourgeoisie",
-        "url": "https://www.youtube.com/watch?v=RCeQN2aEWxo"
-      }
-    ],
-    "techno": [
-      {
-        "name": "Dance For Me",
-        "url": "https://www.youtube.com/watch?v=5DTSvGO_944"
-      },
-      {
-        "name": "Give It To Me",
-        "url": "https://www.youtube.com/watch?v=upQe8EeSyZU"
-      },
-      {
-        "name": "Empire Of The Sun, southstar - We Are The People",
-        "url": "https://www.youtube.com/watch?v=qguEGR5BK2k"
-      },
-      {
-        "name": "Beggin' (Techno)",
-        "url": "https://www.youtube.com/watch?v=tXPs1FwW6lk"
-      },
-      {
-        "name": "Lily Allen - Not Fair",
-        "url": "https://www.youtube.com/watch?v=WON_YIbeLis"
-      },
-      {
-        "name": "I WAS MADE FOR LOVIN' YOU (TECHNO)",
-        "url": "https://www.youtube.com/watch?v=asVznhccYao"
-      },
-      {
-        "name": "Nicolas Julian - Applause",
-        "url": "https://www.youtube.com/watch?v=-pXlrWVICAE"
-      },
-      {
-        "name": "08 Blumchen - Blaue Augen",
-        "url": "https://www.youtube.com/watch?v=mE4PZcUfiwE"
-      },
-      {
-        "name": "MUTA - Party maker",
-        "url": "https://www.youtube.com/watch?v=LT9VNK1aCXY"
-      },
-      {
-        "name": "Restricted - Big Jet Plane",
-        "url": "https://www.youtube.com/watch?v=NpVF0z5N-tE"
       }
     ],
     "lietuviskos": [
@@ -475,20 +443,166 @@
       {
         "name": "Ka Tu Ka Vakare",
         "url": "https://www.youtube.com/watch?v=6SOS4ljHbJY"
+      },
+      {
+        "name": "69 Danguje - Gyvenu",
+        "url": "https://www.youtube.com/watch?v=HMXlhmAoux4"
+      },
+      {
+        "name": "69 Danguje - 16 metu",
+        "url": "https://www.youtube.com/watch?v=nwjoqPcUPrw"
+      },
+      {
+        "name": "Zilviokas - Ryk Zuvedra ryk",
+        "url": "https://www.youtube.com/watch?v=eN6BOI7UlSE"
+      },
+      {
+        "name": "Vytautas siskauskas - Lietuva (Nebelinksmas musu kaimas)",
+        "url": "https://www.youtube.com/watch?v=31UkGzde14c"
+      },
+      {
+        "name": "Vairas - Svajoklis",
+        "url": "https://www.youtube.com/watch?v=hs8_KTV0Vrw"
+      },
+      {
+        "name": "Rytis Cicinas - Ne, nereikia asaru",
+        "url": "https://www.youtube.com/watch?v=48GSg1q2kPE"
+      },
+      {
+        "name": "Funky - Be taves",
+        "url": "https://www.youtube.com/watch?v=heTDrDukLWU"
+      },
+      {
+        "name": "PROFLAME - biznis",
+        "url": "https://www.youtube.com/watch?v=t139Vd83pgs"
       }
     ],
-    "alt": [
+    "lietuviskos/rave": [
       {
-        "name": "ROMANCEPLANET - FALL FROM THE SKY",
-        "url": "https://www.youtube.com/watch?v=HMhzxzXBisw"
+        "name": "VainHouse - Malunas Prie Kelio",
+        "url": "https://www.youtube.com/watch?v=bbwuNjDXCiM"
       },
       {
-        "name": "ROMANCEPLANET - PLAIN WHITE TEE",
-        "url": "https://www.youtube.com/watch?v=tdVQbNwjGac"
+        "name": "Sokoledas - Mano Skonis Sokolado (Matuze & Arnisxd Remix)",
+        "url": "https://www.youtube.com/watch?v=hb41bfQxiM0"
+      }
+    ],
+    "techno": [
+      {
+        "name": "Dance For Me",
+        "url": "https://www.youtube.com/watch?v=5DTSvGO_944"
       },
       {
-        "name": "ROMANCEPLANET - DANCE",
-        "url": "https://www.youtube.com/watch?v=ircOfMb4gEw"
+        "name": "Give It To Me",
+        "url": "https://www.youtube.com/watch?v=upQe8EeSyZU"
+      },
+      {
+        "name": "Empire Of The Sun, southstar - We Are The People",
+        "url": "https://www.youtube.com/watch?v=qguEGR5BK2k"
+      },
+      {
+        "name": "Beggin' (Techno)",
+        "url": "https://www.youtube.com/watch?v=tXPs1FwW6lk"
+      },
+      {
+        "name": "Lily Allen - Not Fair",
+        "url": "https://www.youtube.com/watch?v=WON_YIbeLis"
+      },
+      {
+        "name": "I WAS MADE FOR LOVIN' YOU (TECHNO)",
+        "url": "https://www.youtube.com/watch?v=asVznhccYao"
+      },
+      {
+        "name": "Nicolas Julian - Applause",
+        "url": "https://www.youtube.com/watch?v=-pXlrWVICAE"
+      },
+      {
+        "name": "08 Blumchen - Blaue Augen",
+        "url": "https://www.youtube.com/watch?v=mE4PZcUfiwE"
+      },
+      {
+        "name": "MUTA - Party maker",
+        "url": "https://www.youtube.com/watch?v=LT9VNK1aCXY"
+      },
+      {
+        "name": "Restricted - Big Jet Plane",
+        "url": "https://www.youtube.com/watch?v=NpVF0z5N-tE"
+      },
+      {
+        "name": "Raffaella Carra - Pedro (Jaxomy & Agatino Romero Remix)",
+        "url": "https://www.youtube.com/watch?v=AIGnRc7F86Q"
+      },
+      {
+        "name": "Gigi D'Agostino - Bla Bla Bla",
+        "url": "https://www.youtube.com/watch?v=yKapqR2XRJE"
+      },
+      {
+        "name": "Manian - Welcome To The Club",
+        "url": "https://www.youtube.com/watch?v=7F9xDewtgNA"
+      }
+    ],
+    "lietuviskos/sel": [
+      {
+        "name": "SEL - Lyja",
+        "url": "https://www.youtube.com/watch?v=KL6JBWnXCxw"
+      },
+      {
+        "name": "SEL - Gyvenimo man vieno neuztenka",
+        "url": "https://youtu.be/7Gd9XaEG5o4"
+      },
+      {
+        "name": "SEL - Ten kazkur giliai",
+        "url": "https://youtu.be/N7YNlegeiqs?si=9BBH6hjrgOjJ01Nz"
+      },
+      {
+        "name": "SEL - Uzmerkiu akis",
+        "url": "https://youtu.be/SdWj06XRZms?si=9TNGzjK9ITom-jaD"
+      },
+      {
+        "name": "SEL - As ziuriu i tave pasauli",
+        "url": "https://youtu.be/_SPDjl80kKw"
+      },
+      {
+        "name": "SEL - Tarp amzinybes",
+        "url": "https://youtu.be/UfPj-0QpGFA"
+      },
+      {
+        "name": "SEL - Tik Tok",
+        "url": "https://youtu.be/RkaIUateIxg"
+      },
+      {
+        "name": "SEL - Ten kur sapnai",
+        "url": "https://youtu.be/GDj3NgjDbRo"
+      },
+      {
+        "name": "SEL - Nes as tik vejas",
+        "url": "https://youtu.be/acMG37IZ6z8"
+      },
+      {
+        "name": "SEL - Skrendu",
+        "url": "https://youtu.be/G5Q_asvrXlA"
+      },
+      {
+        "name": "SEL - Leisk",
+        "url": "https://youtu.be/DDPmFMrffXQ"
+      }
+    ],
+    "pop": [
+      {
+        "name": "Green Day - Basket Case",
+        "url": "https://www.youtube.com/watch?v=wZ8eZRxFA-0"
+      },
+      {
+        "name": "Icona Pop - I Love It",
+        "url": "https://www.youtube.com/watch?v=UxxajLWwzqY"
+      },
+      {
+        "name": "Modern Talking - You're My Heart, You're My Soul",
+        "url": "https://www.youtube.com/watch?v=4kHl4FoK1Ys"
+      },
+      {
+        "name": "Cheri cheri lady",
+        "url": "https://www.youtube.com/watch?v=lrIKt5uDWZo"
       }
     ]
   }
