@@ -58,6 +58,7 @@ impl ConfigWrapper {
 impl Config {
     pub async fn parse(cli: &CliArgs) -> Result<Self> {
         if !cli.config.exists() {
+            log::info!("Config doesnt exist");
             return Self::setup_config(&cli).await;
         }
 
@@ -127,6 +128,14 @@ impl Config {
             }
         }
 
+
+        s.save(cli.config.clone().into_std_path_buf())?;
         Ok(s)
+    }
+
+    fn save(&self, path: PathBuf) -> anyhow::Result<()> {
+        let data = serde_json::to_string_pretty(self)?;
+        std::fs::write(path, data)?;
+        Ok(())
     }
 }

@@ -1,0 +1,13 @@
+{
+  "ytdlp": {
+    "path": "/usr/bin/yt-dlp",
+    "is_python": false
+  },
+  "spotdl": {
+    "path": "/home/mcorange/.local/bin/spotdl",
+    "is_python": false
+  },
+  "python": {
+    "path": ""
+  }
+}
