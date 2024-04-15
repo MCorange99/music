@@ -3,7 +3,7 @@ use clap::{Parser, Subcommand};
 
 use crate::util::isatty;
 
-#[derive(Debug, Parser)]
+#[derive(Debug, Parser, Default)]
 pub struct CliArgs {
     /// Show more info
     #[arg(long, short)]
@@ -17,11 +17,13 @@ pub struct CliArgs {
     #[arg(long, short, default_value_t=Utf8PathBuf::from("./out"))]
     pub output: Utf8PathBuf,
 
+    /// Config path
+    #[arg(long, short, default_value_t=Utf8PathBuf::from("./config.json"))]
+    pub config: Utf8PathBuf,
+
     #[command(subcommand)]
     pub command: Option<CliCommand>,
 
-    #[clap(skip)]
-    pub is_tty: bool
 }
 
 #[derive(Debug, Subcommand, Default)]
@@ -29,15 +31,8 @@ pub enum CliCommand {
     #[default]
     Download,
     Add {
-        url: String,
-        name: String,
-        genre: String
-    }
-}
-
-impl CliArgs {
-    pub fn populate_extra(&mut self) -> &mut Self{
-        self.is_tty = isatty();
-        self
+        url: Option<String>,
+        name: Option<String>,
+        genre: Option<String>
     }
 }

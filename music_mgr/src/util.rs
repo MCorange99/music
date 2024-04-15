@@ -1,24 +1,20 @@
+use std::{io::Write, path::PathBuf};
 
-fn is_program_in_path(program: &str) -> Option<String> {
+use crate::constants;
+
+
+
+
+pub fn is_program_in_path(program: &str) -> Option<PathBuf> {
     if let Ok(path) = std::env::var("PATH") {
-        for p in path.split(":") {
-            let p_str = format!("{}/{}", p, program);
-            if std::fs::metadata(&p_str).is_ok() {
-                return Some(p_str);
+        for p in path.split(constants::PATH_VAR_SEP) {
+            let exec_path = PathBuf::from(p).join(program).with_extension(constants::EXEC_EXT);
+            if std::fs::metadata(&exec_path).is_ok() {
+                return Some(exec_path);
             }
         }
     }
     None
-}
-
-
-
-pub fn get_ytdlp_path() -> String {
-    if let Some(p) = is_program_in_path("yt-dlp") {
-        return p;
-    }
-    // TODO: Download yt-dlp to ./.bin/yt-dlp if doesnt exist
-    todo!()
 }
 
 #[cfg(target_family="unix")]
@@ -45,4 +41,14 @@ pub fn isatty() -> bool {
 
         ret.is_ok()
     }
+}
+
+pub async fn dl_to_file(url: &str, p: PathBuf) -> anyhow::Result<()> {
+    log::info!("Downloading {} -> {:?}", url, p);
+    let ytdlp_req = reqwest::get(url).await?.bytes().await?;
+    log::debug!("Downloading {:?} finished, writing to file", p);
+    let mut fd = std::fs::File::create(&p)?;
+    fd.write(&ytdlp_req)?;
+    log::debug!("Finished writing {:?}", p);
+    Ok(())
 }

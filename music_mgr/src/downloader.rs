@@ -4,7 +4,7 @@ use lazy_static::lazy_static;
 use log::Level;
 use tokio::sync::{Mutex, RwLock};
 
-use crate::{cli::CliArgs, manifest::Manifest};
+use crate::{config::ConfigWrapper, manifest::{Manifest, ManifestSong}};
 
 #[allow(dead_code)]
 #[derive(Debug, Clone)]
@@ -20,12 +20,12 @@ lazy_static!(
 
 pub struct Downloader {
     count: usize,
-    ytdlp_path: String,
+    ytdlp_path: PathBuf,
     id_itr: usize,
 }
 
 impl Downloader {
-    pub fn new(ytdlp_path: String) -> Self {
+    pub fn new(ytdlp_path: PathBuf) -> Self {
         Self {
             count: 0,
             ytdlp_path,
@@ -33,12 +33,12 @@ impl Downloader {
         }
     }
 
-    pub async fn download_all(&mut self, manifest: &Manifest, cli: &CliArgs) -> anyhow::Result<usize> {
+    pub async fn download_all(&mut self, manifest: &Manifest, cfg: &ConfigWrapper) -> anyhow::Result<usize> {
         let format = manifest.format()?;
 
         for (genre, songs) in &manifest.genres {
             for song in songs {
-                self.download_song(format!("{}/{genre}/{}.{}", cli.output, song.name, &format), &format, &song.url).await?;
+                self.download_song(cfg, &song, &genre, &format).await?;
                 self.wait_for_procs(10).await?;
             }
         }
@@ -46,7 +46,9 @@ impl Downloader {
         Ok(self.count)
     }
     
-    async fn download_song(&mut self, path: String, audio_format: &String, url: &String) -> anyhow::Result<()> {
+    pub async fn download_song(&mut self, cfg: &ConfigWrapper, song: &ManifestSong, genre: &String, format: &String) -> anyhow::Result<()> {
+        let path = format!("{}/{genre}/{}.{}", cfg.cli.output, song.name, &format);
+
         if PathBuf::from(&path).exists() {
             log::debug!("File {path} exists, skipping");
             return Ok(())
@@ -55,10 +57,10 @@ impl Downloader {
         let cmd = cmd.args([
                 "-x",
                 "--audio-format",
-                audio_format.as_str(),
+                format.as_str(),
                 "-o",
                 path.as_str(),
-                url.as_str()
+                song.url.as_str()
             ]);
 
         let cmd = if log::max_level() < Level::Debug {
@@ -77,7 +79,7 @@ impl Downloader {
         
         log::info!("Downloading {path}");
         PROCESSES.lock().await.write().await.insert(id, Proc {
-            url: url.clone(),
+            url: song.url.clone(),
             path,
             finished: false,
         });

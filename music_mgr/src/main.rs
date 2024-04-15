@@ -1,31 +1,30 @@
-use clap::Parser;
+use config::ConfigWrapper;
+
 
 // TODO: Possibly use https://docs.rs/ytextract/latest/ytextract/ instead of ytdlp
-
-use crate::cli::CliArgs;
-
-mod cli;
 mod manifest;
 mod logger;
 mod downloader;
 mod util;
 mod commands;
 mod prompt;
+mod config;
+mod constants;
 
 #[tokio::main]
 async fn main() {
-    let mut cli_args = CliArgs::parse();
-    cli_args.populate_extra();
-    logger::init_logger(cli_args.debug);
+    let Ok(cfg) = ConfigWrapper::parse().await else {
+        return;
+    };
 
-    let manifest = match manifest::Manifest::from_path(&cli_args.manifest.as_std_path()) {
+    let mut manifest = match manifest::Manifest::from_path(&cfg.cli.manifest.as_std_path()) {
         Ok(m) => m,
         Err(e) => {
-            log::error!("Failed to parse manifest file {}: {e}", cli_args.manifest);
+            log::error!("Failed to parse manifest file {}: {e}", cfg.cli.manifest);
             return;
         }
     };
 
     
-    commands::command_run(&cli_args, &manifest).await;
+    let _ = commands::command_run(&cfg, &mut manifest).await;
 }
