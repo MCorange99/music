@@ -1,13 +1,8 @@
 {
   "ytdlp": {
-    "path": "/usr/bin/yt-dlp",
-    "is_python": false
+    "path": "C:\\bin\\yt-dlp.exe"
   },
   "spotdl": {
-    "path": "/home/mcorange/.local/bin/spotdl",
-    "is_python": false
-  },
-  "python": {
-    "path": ""
+    "path": "UNUSED"
   }
 }

@@ -5,14 +5,15 @@ use crate::{config::{cli::CliCommand, ConfigWrapper}, downloader::Downloader, ma
 
 
 pub async fn command_run(cfg: &ConfigWrapper, manifest: &mut Manifest) -> anyhow::Result<()> {
-    let mut downloader = Downloader::new(cfg.cfg.ytdlp.path.clone());
+    let mut downloader = Downloader::new();
     match &cfg.cli.command {
         None | Some(CliCommand::Download) => {
-            if let Ok(count) = downloader.download_all(manifest, &cfg).await {
-                log::info!("Downloaded {count} songs");
-            } else {
-                log::error!("Failed to download songs");
-                return Ok(());
+            match downloader.download_all(manifest, &cfg).await {
+                Ok(count) => log::info!("Downloaded {count} songs"),
+                Err(e) => {
+                    log::error!("Failed to download songs: {e}");
+                    return Ok(());
+                }
             }
         },
         Some(c) => {

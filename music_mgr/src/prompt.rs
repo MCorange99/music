@@ -18,6 +18,7 @@ pub fn simple_prompt(p: &str) -> String {
     buf.trim().to_string()
 }
 
+#[allow(dead_code)]
 pub fn prompt_with_list(p: &str, options: &[&str]) -> usize {
     println!("{c}prompt{r}: {p}",
         c=anstyle::AnsiColor::Cyan.render_fg(),
@@ -75,7 +76,7 @@ pub fn prompt_with_list_or_str(p: &str, options: &[String]) -> String {
 }
 
 
-
+#[allow(dead_code)]
 pub fn prompt_with_map(p: &str, options: HashMap<&str, &str>) -> String {
     println!("{c}prompt{r}: {p}",
         c=anstyle::AnsiColor::Cyan.render_fg(),

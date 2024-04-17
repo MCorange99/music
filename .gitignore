@@ -1,3 +1,4 @@
 /out
 /music_mgr/target
 /.venv
+/config.json

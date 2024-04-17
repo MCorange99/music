@@ -5,12 +5,12 @@ use std::path::PathBuf;
 use clap::Parser;
 use serde::{Deserialize, Serialize};
 use anyhow::Result;
-use crate::util::{self, dl_to_file, isatty};
+use crate::util::{self, isatty};
 
 use self::cli::CliArgs;
 
-const YTDLP_DL_URL: &'static str = "https://github.com/yt-dlp/yt-dlp/archive/refs/heads/master.zip";
-const SPOTDL_DL_URL: &'static str = "https://github.com/spotDL/spotify-downloader/archive/refs/heads/master.zip";
+// const YTDLP_DL_URL: &'static str = "https://github.com/yt-dlp/yt-dlp/archive/refs/heads/master.zip";
+// const SPOTDL_DL_URL: &'static str = "https://github.com/spotDL/spotify-downloader/archive/refs/heads/master.zip";
 
 #[derive(Debug, Default)]
 pub struct ConfigWrapper {
@@ -23,23 +23,15 @@ pub struct ConfigWrapper {
 pub struct Config {
     pub ytdlp: ConfigYtdlp,
     pub spotdl: ConfigSpotdl,
-    pub python: ConfigPython,
 }
 
 #[derive(Debug, Serialize, Deserialize, Default)]
 pub struct ConfigYtdlp {
     pub path: PathBuf,
-    pub is_python: bool,
 }
 
 #[derive(Debug, Serialize, Deserialize, Default)]
 pub struct ConfigSpotdl {
-    pub path: PathBuf,
-    pub is_python: bool
-}
-
-#[derive(Debug, Serialize, Deserialize, Default)]
-pub struct ConfigPython {
     pub path: PathBuf,
 }
 
@@ -69,67 +61,67 @@ impl Config {
 
     async fn setup_config(cli: &CliArgs) -> Result<Self> {
         let mut s = Self::default();
-
-        let bin_dir = cli.output.clone().into_std_path_buf().join(".bin/");
-        let mut python_needed = false;
+        let mut error = false;
 
         match util::is_program_in_path("yt-dlp") {
             Some(p) => {
                 s.ytdlp.path = p;
-                s.ytdlp.is_python = false;
             },
 
             None => {
-                python_needed = true;
-                s.ytdlp.is_python = true;
-                s.ytdlp.path = bin_dir.join("ytdlp");
-                dl_to_file(YTDLP_DL_URL, s.ytdlp.path.join("ytdlp.zip")).await?;
-                zip_extensions::zip_extract(&s.ytdlp.path.join("ytdlp.zip"), &s.ytdlp.path)?;
+                error = true;
+                log::error!("could not find yt-dlp, please install it.");
+                log::info!(" - With winget (Windows only) (recommended):");
+                log::info!("   - Most new windows versions have winget installed, if not, instructions here: https://learn.microsoft.com/en-us/windows/package-manager/winget/#install-winget");
+                log::info!("   - run `winget install yt-dlp`");
+                log::info!(" - With chocolatey (Windows only):");
+                log::info!("   - Make sure you have chocolatey installed - https://chocolatey.org/install");
+                log::info!("   - run `choco install yt-dlp` as Admin");
+                log::info!(" - With pip (from python) (Cross platform)");
+                log::info!("   - Make sure you have python installed");
+                log::info!("   - pip install yt-dlp");
+                log::info!(" - Using your distro's package manager (Unix/BSD only) (Not recommended)")
             }
         }
 
         match util::is_program_in_path("spotdl") {
             Some(p) => {
                 s.spotdl.path = p;
-                s.spotdl.is_python = false;
             },
 
             None => {
-                python_needed = true;
-                s.spotdl.is_python = true;
-                s.spotdl.path = bin_dir.join("ytdlp");
-                dl_to_file(SPOTDL_DL_URL, s.spotdl.path.join("spotdl.zip")).await?;
-                zip_extensions::zip_extract(&s.spotdl.path.join("spotdl.zip"), &s.ytdlp.path)?;
-            }
-        }
-
-
-        let python_paths = &[
-            util::is_program_in_path("python"),
-            util::is_program_in_path("python3")
-        ];
-
-        if python_needed {
-            let mut found = false;
-            for p in python_paths {
-                match p {
-                    Some(p) => {
-                        s.python.path = p.clone();
-                        found = true;
-                        break
-                    }
-                    None => {
-                    }
+                let res = crate::prompt::prompt_bool("Spotdl is not installed but if you dont need to download music from spotify you dont need it, skip it?", None);
+                if res {
+                    s.spotdl.path = PathBuf::from("UNUSED");
+                } else {
+                    error = true;
+                    log::error!("could not find spotdl, please install it. ");
+                    log::info!(" - With pip (from python) (Cross platform) (recommended)");
+                    log::info!("   - Make sure you have python installed - https://www.python.org/downloads/");
+                    log::info!("   - pip install spotdl");
                 }
             }
+        }
 
-            if !found {
-                panic!("Python needs to be installed for this to work, or install ytdlp and spotdl manually, (dont forget to delete the config file after doing so)");
+        match util::is_program_in_path("ffmpeg") {
+            Some(_) => (),
+
+            None => {
+                error = true;
+                log::error!("could not find ffmpeg, please install it.");
+                log::info!(" - With winget (Windows only) (recommended):");
+                log::info!("   - Most new windows versions have winget installed, if not, instructions here: https://learn.microsoft.com/en-us/windows/package-manager/winget/#install-winget");
+                log::info!("   - run `winget install --id=Gyan.FFmpeg -e`");
+                log::info!(" - With chocolatey (Windows only):");
+                log::info!("   - Make sure you have chocolatey installed - https://chocolatey.org/install");
+                log::info!("   - run `choco install ffmpeg` as Admin");
             }
         }
 
+        if !error {
+            s.save(cli.config.clone().into_std_path_buf())?;
+        }
 
-        s.save(cli.config.clone().into_std_path_buf())?;
         Ok(s)
     }
 

@@ -1,7 +1,6 @@
 use camino::Utf8PathBuf;
 use clap::{Parser, Subcommand};
 
-use crate::util::isatty;
 
 #[derive(Debug, Parser, Default)]
 pub struct CliArgs {

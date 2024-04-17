@@ -20,15 +20,13 @@ lazy_static!(
 
 pub struct Downloader {
     count: usize,
-    ytdlp_path: PathBuf,
     id_itr: usize,
 }
 
 impl Downloader {
-    pub fn new(ytdlp_path: PathBuf) -> Self {
+    pub fn new() -> Self {
         Self {
             count: 0,
-            ytdlp_path,
             id_itr: 0,
         }
     }
@@ -53,19 +51,36 @@ impl Downloader {
             log::debug!("File {path} exists, skipping");
             return Ok(())
         }
-        let mut cmd = tokio::process::Command::new(&self.ytdlp_path);
-        let cmd = cmd.args([
-                "-x",
-                "--audio-format",
-                format.as_str(),
-                "-o",
-                path.as_str(),
-                song.url.as_str()
-            ]);
 
-        let cmd = if log::max_level() < Level::Debug {
-            cmd.stdout(Stdio::null()).stderr(Stdio::null())
-        } else {cmd};
+        log::debug!("File {path} doesnt exist, downloading");
+        let mut cmd = if song.url.contains("youtube.com") || song.url.contains("youtu.be") {
+            log::debug!("Song {} is from yotube", song.url);
+            let mut cmd = tokio::process::Command::new(&cfg.cfg.ytdlp.path);
+            cmd.args([
+                    "-x",
+                    "--audio-format",
+                    format.as_str(),
+                    "-o",
+                    path.as_str(),
+                    song.url.as_str()
+                ]);
+            cmd
+        } else {
+            let mut cmd = tokio::process::Command::new(&cfg.cfg.spotdl.path);
+            cmd.args([
+                    "-x",
+                    "--audio-format",
+                    format.as_str(),
+                    "-o",
+                    path.as_str(),
+                    song.url.as_str()
+                ]);
+            cmd
+        };
+
+        if log::max_level() < Level::Debug {
+            cmd.stdout(Stdio::null()).stderr(Stdio::null());
+        };
 
         let mut proc = cmd.spawn()?;
         let id = self.id_itr;

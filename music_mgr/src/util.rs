@@ -1,4 +1,4 @@
-use std::{io::Write, path::PathBuf};
+use std::path::PathBuf;
 
 use crate::constants;
 
@@ -43,12 +43,12 @@ pub fn isatty() -> bool {
     }
 }
 
-pub async fn dl_to_file(url: &str, p: PathBuf) -> anyhow::Result<()> {
-    log::info!("Downloading {} -> {:?}", url, p);
-    let ytdlp_req = reqwest::get(url).await?.bytes().await?;
-    log::debug!("Downloading {:?} finished, writing to file", p);
-    let mut fd = std::fs::File::create(&p)?;
-    fd.write(&ytdlp_req)?;
-    log::debug!("Finished writing {:?}", p);
-    Ok(())
-}
+// pub async fn dl_to_file(url: &str, p: PathBuf) -> anyhow::Result<()> {
+//     log::info!("Downloading {} -> {:?}", url, p);
+//     let ytdlp_req = reqwest::get(url).await?.bytes().await?;
+//     log::debug!("Downloading {:?} finished, writing to file", p);
+//     let mut fd = std::fs::File::create(&p)?;
+//     fd.write(&ytdlp_req)?;
+//     log::debug!("Finished writing {:?}", p);
+//     Ok(())
+// }
