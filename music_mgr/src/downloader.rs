@@ -1,10 +1,10 @@
-use std::{collections::HashMap, path::PathBuf, process::Stdio, str::FromStr};
+use std::{collections::HashMap, path::PathBuf, process::Stdio};
 
 use lazy_static::lazy_static;
 use log::Level;
 use tokio::sync::{Mutex, RwLock};
 
-use crate::{config::ConfigWrapper, manifest::{Manifest, ManifestSong}};
+use crate::{config::ConfigWrapper, manifest::{song::{Song, SongType}, Format, Manifest}};
 
 #[allow(dead_code)]
 #[derive(Debug, Clone)]
@@ -32,11 +32,11 @@ impl Downloader {
     }
 
     pub async fn download_all(&mut self, manifest: &Manifest, cfg: &ConfigWrapper) -> anyhow::Result<usize> {
-        let format = manifest.format()?;
+        let format = manifest.get_format();
 
-        for (genre, songs) in &manifest.genres {
-            for song in songs {
-                self.download_song(cfg, song, &genre, &format).await?;
+        for (genre, songs) in manifest.get_genres() {
+            for (song_name, song) in songs {
+                self.download_song(cfg, song_name, song, &genre, format).await?;
                 self.wait_for_procs(10).await?;
             }
         }
@@ -44,26 +44,20 @@ impl Downloader {
         Ok(self.count)
     }
     
-    pub async fn download_song(&mut self, cfg: &ConfigWrapper, song: &ManifestSong, genre: &String, format: &String) -> anyhow::Result<()> {
-        let dl_dir = format!("{}/{genre}/", cfg.cli.output);
-        let dl_file = format!("{dl_dir}/{}.{}", song.name, &format);
+    pub async fn download_song(&mut self, cfg: &ConfigWrapper, name: &String, song: &Song, genre: &String, format: &Format) -> anyhow::Result<()> {
+        let dl_dir = format!("{}/{genre}", cfg.cli.output);
+        let dl_file = format!("{dl_dir}/{}.{}", name, &format);
 
         if PathBuf::from(&dl_file).exists() {
             log::debug!("File {dl_file} exists, skipping");
             return Ok(())
         }
 
-        let url = url::Url::from_str(&song.url)?;
-        let Some(url_host) = url.host() else {
-            log::error!("Url {} doesnt have a valid host name", &song.url);
-            return Ok(());
-        };
         log::debug!("File {dl_file} doesnt exist, downloading");
-        let mut cmd = match url_host.to_string().as_str() {
+        let mut cmd = match song.get_type() {
 
-            "youtube.com" |
-            "youtu.be" => {
-                log::debug!("Song {} is from yotube", song.url);
+            &SongType::Youtube => {
+                log::debug!("Song {} is from yotube", song.get_url_str());
                 let mut cmd = tokio::process::Command::new(&cfg.cfg.ytdlp.path);
                 cmd.args([
                         "-x",
@@ -71,11 +65,11 @@ impl Downloader {
                         &format.to_string(),
                         "-o",
                         dl_file.as_str(),
-                        song.url.as_str()
+                        song.get_url_str().as_str()
                     ]);
                 cmd
             }
-            "open.spotify.com" => {
+            SongType::Spotify => {
 
                 let mut cmd = tokio::process::Command::new(&cfg.cfg.spotdl.path);
                 cmd.args([
@@ -83,12 +77,12 @@ impl Downloader {
                     &format.to_string(),
                     "--output",
                     dl_dir.as_str(),
-                    song.url.as_str()
+                    song.get_url_str().as_str()
                 ]);
                 cmd
             }
             url => {
-                log::error!("Unknown or unsupported hostname '{}'", url);
+                log::error!("Unknown or unsupported hostname '{:?}'", url);
                 return Ok(());
             }
         };
@@ -109,7 +103,7 @@ impl Downloader {
         
         log::info!("Downloading {dl_file}");
         PROCESSES.lock().await.write().await.insert(id, Proc {
-            url: song.url.clone(),
+            url: song.get_url_str().clone(),
             path: dl_file,
             finished: false,
         });
@@ -141,7 +135,7 @@ impl Downloader {
                 }
             }
         }
-        #[allow(unreachable_code)] //? rust_analizer not smart enough for this
+        #[allow(unreachable_code)] //? rust_analyzer not smart enough for this
         Ok(())
     }
 }

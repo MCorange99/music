@@ -17,7 +17,7 @@ async fn main() {
         return;
     };
 
-    let mut manifest = match manifest::Manifest::from_path(&cfg.cli.manifest.as_std_path()) {
+    let mut manifest = match manifest::Manifest::load_new(&cfg.cli.manifest.clone().into_std_path_buf()) {
         Ok(m) => m,
         Err(e) => {
             log::error!("Failed to parse manifest file {}: {e}", cfg.cli.manifest);

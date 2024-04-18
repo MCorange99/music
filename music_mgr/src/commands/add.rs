@@ -1,6 +1,6 @@
 use std::str::FromStr;
 
-use crate::{config::ConfigWrapper, downloader::Downloader, manifest::{Manifest, ManifestSong}, util::is_supported_host};
+use crate::{config::ConfigWrapper, downloader::Downloader, manifest::{song::Song, Manifest}, util::is_supported_host};
 
 
 
@@ -10,7 +10,7 @@ pub async fn add(cfg: &ConfigWrapper, manifest: &mut Manifest, downloader: &mut 
     log::debug!("url: {url:?}");
     log::debug!("name: {name:?}");
 
-    let mut genres = manifest.genres.keys().map(|f| f.clone()).collect::<Vec<String>>();
+    let mut genres = manifest.get_genres().keys().map(|f| f.clone()).collect::<Vec<String>>();
 
     genres.sort();
 
@@ -35,18 +35,14 @@ pub async fn add(cfg: &ConfigWrapper, manifest: &mut Manifest, downloader: &mut 
         crate::prompt::simple_prompt("Enter song name with like this: {Author} - {Song name}")
     );
 
-    manifest.add_song(genre.clone(), name.clone(), url.clone())?;
-    manifest.save()?;
+    let song = Song::from_url_str(url)?;
+    manifest.add_song(genre.clone(), name.clone(), song.clone());
+    manifest.save(None)?;
 
     let should_download = crate::prompt::prompt_bool("Download song now?", Some(false));
 
     if should_download {
-        let song = &ManifestSong {
-            name,
-            url,
-        };
-
-        downloader.download_song(cfg, song, &genre, &manifest.format()?).await?;
+        downloader.download_song(cfg, &name, &song, &genre, manifest.get_format()).await?;
         downloader.wait_for_procs(0).await?;
     }
 

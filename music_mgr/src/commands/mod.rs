@@ -19,7 +19,11 @@ pub async fn command_run(cfg: &ConfigWrapper, manifest: &mut Manifest) -> anyhow
         Some(c) => {
             match c {
                 CliCommand::Download => unreachable!(),
-                CliCommand::Add { url, name, genre  } => add::add(cfg, manifest, &mut downloader, url, name, genre).await?,
+                CliCommand::Add { url, name, genre  } => {
+                    if let Err(e) = add::add(cfg, manifest, &mut downloader, url, name, genre).await {
+                        log::error!("Failed to run 'add' command: {e}");
+                    }
+                }
             }
         }
     }
