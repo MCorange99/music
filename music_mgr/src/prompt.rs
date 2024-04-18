@@ -2,7 +2,7 @@ use std::{collections::HashMap, io::Write};
 
 
 
-pub fn simple_prompt(p: &str) -> String {
+pub(crate) fn simple_prompt(p: &str) -> String {
 
     print!("{c}prompt{r}: {p} > ",
         c=anstyle::AnsiColor::Cyan.render_fg(),
@@ -19,7 +19,7 @@ pub fn simple_prompt(p: &str) -> String {
 }
 
 #[allow(dead_code)]
-pub fn prompt_with_list(p: &str, options: &[&str]) -> usize {
+pub(crate) fn prompt_with_list(p: &str, options: &[&str]) -> usize {
     println!("{c}prompt{r}: {p}",
         c=anstyle::AnsiColor::Cyan.render_fg(),
         r=anstyle::Reset.render()
@@ -47,7 +47,7 @@ pub fn prompt_with_list(p: &str, options: &[&str]) -> usize {
     }
 }
 
-pub fn prompt_with_list_or_str(p: &str, options: &[String]) -> String {
+pub(crate) fn prompt_with_list_or_str(p: &str, options: &[String]) -> String {
     println!("{c}prompt{r}: {p} (select with number or input text)",
         c=anstyle::AnsiColor::Cyan.render_fg(),
         r=anstyle::Reset.render()
@@ -77,7 +77,7 @@ pub fn prompt_with_list_or_str(p: &str, options: &[String]) -> String {
 
 
 #[allow(dead_code)]
-pub fn prompt_with_map(p: &str, options: HashMap<&str, &str>) -> String {
+pub(crate) fn prompt_with_map(p: &str, options: HashMap<&str, &str>) -> String {
     println!("{c}prompt{r}: {p}",
         c=anstyle::AnsiColor::Cyan.render_fg(),
         r=anstyle::Reset.render()

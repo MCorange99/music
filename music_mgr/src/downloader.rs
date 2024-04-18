@@ -1,4 +1,4 @@
-use std::{collections::HashMap, path::PathBuf, process::Stdio};
+use std::{collections::HashMap, path::PathBuf, process::Stdio, str::FromStr};
 
 use lazy_static::lazy_static;
 use log::Level;
@@ -36,7 +36,7 @@ impl Downloader {
 
         for (genre, songs) in &manifest.genres {
             for song in songs {
-                self.download_song(cfg, &song, &genre, &format).await?;
+                self.download_song(cfg, song, &genre, &format).await?;
                 self.wait_for_procs(10).await?;
             }
         }
@@ -45,39 +45,54 @@ impl Downloader {
     }
     
     pub async fn download_song(&mut self, cfg: &ConfigWrapper, song: &ManifestSong, genre: &String, format: &String) -> anyhow::Result<()> {
-        let path = format!("{}/{genre}/{}.{}", cfg.cli.output, song.name, &format);
+        let dl_dir = format!("{}/{genre}/", cfg.cli.output);
+        let dl_file = format!("{dl_dir}/{}.{}", song.name, &format);
 
-        if PathBuf::from(&path).exists() {
-            log::debug!("File {path} exists, skipping");
+        if PathBuf::from(&dl_file).exists() {
+            log::debug!("File {dl_file} exists, skipping");
             return Ok(())
         }
 
-        log::debug!("File {path} doesnt exist, downloading");
-        let mut cmd = if song.url.contains("youtube.com") || song.url.contains("youtu.be") {
-            log::debug!("Song {} is from yotube", song.url);
-            let mut cmd = tokio::process::Command::new(&cfg.cfg.ytdlp.path);
-            cmd.args([
-                    "-x",
-                    "--audio-format",
-                    format.as_str(),
-                    "-o",
-                    path.as_str(),
-                    song.url.as_str()
-                ]);
-            cmd
-        } else {
-            let mut cmd = tokio::process::Command::new(&cfg.cfg.spotdl.path);
-            cmd.args([
-                    "-x",
-                    "--audio-format",
-                    format.as_str(),
-                    "-o",
-                    path.as_str(),
-                    song.url.as_str()
-                ]);
-            cmd
+        let url = url::Url::from_str(&song.url)?;
+        let Some(url_host) = url.host() else {
+            log::error!("Url {} doesnt have a valid host name", &song.url);
+            return Ok(());
         };
+        log::debug!("File {dl_file} doesnt exist, downloading");
+        let mut cmd = match url_host.to_string().as_str() {
 
+            "youtube.com" |
+            "youtu.be" => {
+                log::debug!("Song {} is from yotube", song.url);
+                let mut cmd = tokio::process::Command::new(&cfg.cfg.ytdlp.path);
+                cmd.args([
+                        "-x",
+                        "--audio-format",
+                        &format.to_string(),
+                        "-o",
+                        dl_file.as_str(),
+                        song.url.as_str()
+                    ]);
+                cmd
+            }
+            "open.spotify.com" => {
+
+                let mut cmd = tokio::process::Command::new(&cfg.cfg.spotdl.path);
+                cmd.args([
+                    "--format",
+                    &format.to_string(),
+                    "--output",
+                    dl_dir.as_str(),
+                    song.url.as_str()
+                ]);
+                cmd
+            }
+            url => {
+                log::error!("Unknown or unsupported hostname '{}'", url);
+                return Ok(());
+            }
+        };
+                
         if log::max_level() < Level::Debug {
             cmd.stdout(Stdio::null()).stderr(Stdio::null());
         };
@@ -92,10 +107,10 @@ impl Downloader {
             PROCESSES.lock().await.write().await.get_mut(&id).unwrap().finished = true;
         });
         
-        log::info!("Downloading {path}");
+        log::info!("Downloading {dl_file}");
         PROCESSES.lock().await.write().await.insert(id, Proc {
             url: song.url.clone(),
-            path,
+            path: dl_file,
             finished: false,
         });
         self.id_itr += 1;

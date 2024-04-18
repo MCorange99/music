@@ -2,10 +2,25 @@ use std::path::PathBuf;
 
 use crate::constants;
 
+pub(crate) fn escape_song_name(s: String) -> String {
+    s
+        .replace(".", "")
+        .replace("'", "")
+}
 
+pub(crate) fn is_supported_host(url: url::Url) -> bool {
+    let host = url.host_str();
+    if host.is_none() {
+        return false;
+    }
+    match host.unwrap() {
+        "youtube.com" | "youtu.be" |
+        "open.spotify.com"  => true,
+        _ => false
+    }
+}
 
-
-pub fn is_program_in_path(program: &str) -> Option<PathBuf> {
+pub(crate) fn is_program_in_path(program: &str) -> Option<PathBuf> {
     if let Ok(path) = std::env::var("PATH") {
         for p in path.split(constants::PATH_VAR_SEP) {
             let exec_path = PathBuf::from(p).join(program).with_extension(constants::EXEC_EXT);
@@ -18,7 +33,7 @@ pub fn is_program_in_path(program: &str) -> Option<PathBuf> {
 }
 
 #[cfg(target_family="unix")]
-pub fn isatty() -> bool {
+pub(crate) fn isatty() -> bool {
     use std::{ffi::c_int, os::fd::AsRawFd};
     unsafe {
         let fd = std::io::stdin().as_raw_fd();
@@ -27,7 +42,7 @@ pub fn isatty() -> bool {
 }
 
 #[cfg(target_family="windows")]
-pub fn isatty() -> bool {
+pub(crate) fn isatty() -> bool {
     unsafe {
         use windows::Win32::System::Console;
         use Console::{CONSOLE_MODE, STD_OUTPUT_HANDLE};
