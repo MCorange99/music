@@ -20,14 +20,12 @@ lazy_static!(
 
 pub struct Downloader {
     count: usize,
-    id_itr: usize,
 }
 
 impl Downloader {
     pub fn new() -> Self {
         Self {
             count: 0,
-            id_itr: 0,
         }
     }
 
@@ -37,10 +35,10 @@ impl Downloader {
         for (genre, songs) in manifest.get_genres() {
             for (song_name, song) in songs {
                 self.download_song(cfg, song_name, song, &genre, format).await?;
-                self.wait_for_procs(10).await?;
+                self.count += crate::process_manager::wait_for_procs_untill(10).await?;
             }
         }
-        self.wait_for_procs(0).await?;
+        self.count += crate::process_manager::wait_for_procs_untill(0).await?;
         Ok(self.count)
     }
     
@@ -91,51 +89,7 @@ impl Downloader {
             cmd.stdout(Stdio::null()).stderr(Stdio::null());
         };
 
-        let mut proc = cmd.spawn()?;
-        let id = self.id_itr;
-        
-        tokio::spawn(async move {
-            let id = id;
-            proc.wait().await
-                .expect("child process encountered an error");
-            PROCESSES.lock().await.write().await.get_mut(&id).unwrap().finished = true;
-        });
-        
-        log::info!("Downloading {dl_file}");
-        PROCESSES.lock().await.write().await.insert(id, Proc {
-            url: song.get_url_str().clone(),
-            path: dl_file,
-            finished: false,
-        });
-        self.id_itr += 1;
-        Ok(())
-    }
-
-    pub async fn wait_for_procs(&mut self, until: usize) -> anyhow::Result<()> {
-        // NOTE: This looks really fucked because i dont want to deadlock the processes so i lock PROCESSES for as little as possible
-        // NOTE: So its also kinda really slow
-        loop {
-            {
-                if PROCESSES.lock().await.read().await.len() <= until {
-                    return Ok(());
-                }
-            }
-
-            let procs = {
-                PROCESSES.lock().await.read().await.clone()
-            };
-
-            for (idx, proc) in procs {
-                if proc.finished {
-                    {
-                        PROCESSES.lock().await.write().await.remove(&idx);
-                    }
-                    log::info!("Finished downloading {}", proc.path);
-                    self.count += 1;
-                }
-            }
-        }
-        #[allow(unreachable_code)] //? rust_analyzer not smart enough for this
+        crate::process_manager::add_proc(cmd, format!("Downloaded {dl_file}")).await?;
         Ok(())
     }
 }

@@ -8,6 +8,9 @@ use std::{collections::HashMap, fmt::{Debug, Display}, path::PathBuf};
 use anyhow::{bail, Result};
 use serde::{Deserialize, Serialize};
 
+
+const DEFAULT_MANIFEST: &'static str = include_str!("../../manifest.default.json");
+
 pub type GenreName = String;
 pub type SongName = String;
 pub type Genre = HashMap<SongName, song::Song>;
@@ -60,6 +63,13 @@ impl Manifest {
     pub fn get_genres_mut(&mut self) -> &mut HashMap<GenreName, Genre> {
         &mut self.genres
     }
+    pub fn get_song_count(&self) -> usize {
+        let mut count = 0;
+        for (_, v) in &self.genres {
+            count += v.len();
+        }
+        count
+    }
     pub fn load(&mut self, p: Option<&PathBuf>) -> Result<()> {
         let path = p.unwrap_or(&self.path);
         log::debug!("Path: {path:?}");
@@ -79,6 +89,11 @@ impl Manifest {
         Ok(())
     }
     pub fn load_new(p: &PathBuf) -> Result<Self> {
+
+        if !p.exists() {
+            std::fs::write(p, DEFAULT_MANIFEST)?;
+        }
+
         let mut s = Self::default();
         log::debug!("Path: {p:?}");
         s.path = p.clone();

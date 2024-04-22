@@ -43,7 +43,7 @@ pub async fn add(cfg: &ConfigWrapper, manifest: &mut Manifest, downloader: &mut 
 
     if should_download {
         downloader.download_song(cfg, &name, &song, &genre, manifest.get_format()).await?;
-        downloader.wait_for_procs(0).await?;
+        crate::process_manager::wait_for_procs_untill(0).await?;
     }
 
     Ok(())

@@ -1,4 +1,6 @@
 /out
 /music_mgr/target
+/music_mgr/config.json
+/music_mgr/manifest.json
 /.venv
 /config.json

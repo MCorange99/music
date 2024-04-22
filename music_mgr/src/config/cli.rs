@@ -25,9 +25,8 @@ pub struct CliArgs {
 
 }
 
-#[derive(Debug, Subcommand, Default)]
+#[derive(Debug, Subcommand)]
 pub enum CliCommand {
-    #[default]
     Download,
     Add {
         #[arg(long, short)]
@@ -36,5 +35,6 @@ pub enum CliCommand {
         name: Option<String>,
         #[arg(long, short)]
         genre: Option<String>
-    }
+    },
+    Gui
 }

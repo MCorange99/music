@@ -10,6 +10,7 @@ mod commands;
 mod prompt;
 mod config;
 mod constants;
+mod process_manager;
 
 #[tokio::main]
 async fn main() {

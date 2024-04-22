@@ -11,6 +11,17 @@ pub enum SongType {
     Soundcloud,
 }
 
+impl ToString for SongType {
+    fn to_string(&self) -> String {
+        let s = match self {
+            SongType::Youtube => "Youtube",
+            SongType::Spotify => "Spotify",
+            SongType::Soundcloud => "Soundcloud",
+        };
+        String::from(s)
+    }
+}
+
 #[derive(Debug, Serialize, Deserialize, Clone)]
 pub struct Song {
     url: String,
