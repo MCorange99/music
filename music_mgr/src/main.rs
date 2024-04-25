@@ -28,4 +28,7 @@ async fn main() {
 
     
     let _ = commands::command_run(&cfg, &mut manifest).await;
+
+    // let mut s = String::new();
+    // let _ = std::io::stdin().read_line(&mut s);
 }

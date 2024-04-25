@@ -25,12 +25,6 @@ pub async fn add(cfg: &ConfigWrapper, manifest: &mut Manifest, downloader: &mut 
         crate::prompt::simple_prompt("Enter song youtube url, make sure its not a playlist, (yt only for now)")
     );
 
-    if !is_supported_host(url::Url::from_str(&url)?) {
-        log::error!("Invalid or unsupported host name");
-        return Ok(());
-    }
-
-
     let name = name.clone().unwrap_or_else( ||
         crate::prompt::simple_prompt("Enter song name with like this: {Author} - {Song name}")
     );

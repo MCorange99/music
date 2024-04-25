@@ -45,10 +45,16 @@ pub(crate) fn isatty() -> bool {
         }; 
         
         let mut out = CONSOLE_MODE(0);
-
         let ret = Console::GetConsoleMode(handle, &mut out);
 
-        ret.is_ok()
+        if !ret.is_ok() {
+            return false;
+        }
+
+        match out.0 {
+            3 => return false,
+            _ => return true,
+        }
     }
 }
 

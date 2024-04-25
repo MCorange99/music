@@ -7,7 +7,7 @@ use crate::{config::{cli::CliCommand, ConfigWrapper}, downloader::Downloader, ma
 
 pub async fn command_run(cfg: &ConfigWrapper, manifest: &mut Manifest) -> anyhow::Result<()> {
     log::info!("Is in term: {}", cfg.isatty);
-    //std::fs::write("./isatty", format!("{}\n", cfg.isatty))?;
+    // std::fs::write("./isatty", format!("{}\n", cfg.isatty))?;
 
     let mut downloader = Downloader::new();
     match (&cfg.cli.command, cfg.isatty) {
